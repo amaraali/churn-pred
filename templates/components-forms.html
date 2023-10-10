@@ -1,0 +1,236 @@
+{% extends "home2.html" %}
+
+{% block title %} UI Forms {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="py-4">
+    <nav aria-label="breadcrumb" class="d-none d-md-inline-block">
+        <ol class="breadcrumb breadcrumb-dark breadcrumb-transparent">
+            <li class="breadcrumb-item">
+                <a href="#">
+                    <svg class="icon icon-xxs" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                        </path>
+                    </svg>
+                </a>
+            </li>
+            <li class="breadcrumb-item"><a href="#">Volt</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Forms</li>
+        </ol>
+    </nav>
+    <div class="d-flex justify-content-between w-100 flex-wrap">
+        <div class="mb-3 mb-lg-0">
+            <h1 class="h4">Forms</h1>
+            <p class="mb-0">Dozens of reusable components built to provide buttons, alerts, popovers, and more.</p>
+        </div>
+        <div>
+            <a href="https://themesberg.com/docs/volt-bootstrap-5-dashboard/components-forms/"
+                class="btn btn-outline-gray"><i class="far fa-question-circle me-1"></i> Forms Docs</a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 mb-4">
+        <div class="card border-0 shadow components-section">
+            <div class="card-body">
+                <div class="row mb-4">
+                    <div class="col-lg-6 col-sm-8">
+                        <!-- Form -->
+                        <form method="POST" action="/predict" class="mt-4" id="prediction-form">
+                            <div class="mb-4">
+                                <label class="my-1 me-2" for="country">Month-to-month Contract</label>
+                                <select class="form-select" id="query1" name="query1"
+                                    aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label class="my-1 me-2" for="country">Two Years Contract</label>
+                                <select class="form-select" name="query6" id="query6"
+                                    aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                            </div>
+                            <!-- <div class="mb-4">
+                                <label for="comment">CONTRACT PERIOD</label>
+                                <input class="form-control" rows="2" id="query1" name="query1" rows="2" cols="5"
+                                    >{{query1}}</input>
+                                <small id="emailHelp" class="form-text text-muted">If Contract period =
+                                    <b>Month-to-month</b>,
+                                    enter 1, else 0:</small>
+                            </div> -->
+                            <!-- <div class="mb-4">
+                                <label for="comment">CONTRACT PERIOD (validation)</label>
+                                <input class="form-control" rows="2" id="query6" name="query6" rows="2" cols="5"
+                                    >{{query6}}</input>
+                                <small id="emailHelp" class="form-text text-muted">If Contract period =
+                                    <b>Two years</b>,
+                                    enter 1, else 0:</small>
+                            </div> -->
+                            <div class="mb-4">
+                                <label for="comment">TOTAL CHARGES</label>
+                                <input class="form-control" rows="2" id="query2" name="query2" rows="2"
+                                    cols="5">{{query2}}</input>
+                                <small id="emailHelp" class="form-text text-muted">Please enter numeric numbers</small>
+                            </div>
+                            <div class="mb-4">
+                                <label for="comment">MONTHLY CHARGES</label>
+                                <input class="form-control" rows="2" id="query8" name="query8" rows="2"
+                                    cols="5">{{query8}}</input>
+                                <small id="emailHelp" class="form-text text-muted">Please enter numeric numbers</small>
+                            </div>
+                            <div class="mb-4">
+                                <label class="my-1 me-2" for="country">Payment Method</label>
+                                <select class="form-select" id="query7" name="query7"
+                                    aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">Electronic Check</option>
+                                    <option value="0">Bank Transfer</option>
+                                    <option value="0">Credit Card</option>
+                                    <option value="0">Mailed Check</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label class="my-1 me-2" for="country">Tenure</label>
+                                <select class="form-select" id="query10" name="query10"
+                                    aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">1 - 12 Bulan</option>
+                                    <option value="0">25 - 36 Bulan</option>
+                                    <option value="0">37 - 48 Bulan</option>
+                                </select>
+                            </div>
+                            <!-- <div class="mb-4">
+                                <label for="comment">PAYMENT METHOD</label>
+                                <input class="form-control" rows="2" id="query7" name="query7" rows="2" cols="5"
+                                    >{{query7}}</input>
+                                <small id="emailHelp" class="form-text text-muted">If using <b>Electionic Check</b> to
+                                    pay,
+                                    enter
+                                    1, else 0:</small>
+                            </div> -->
+                            <!-- <div class="mb-4">
+                                <label for="comment">TENURE</label>
+                                <input class="form-control" rows="2" id="query10" name="query10" rows="2" cols="5"
+                                    >{{query10}}</input>
+                                <small id="emailHelp" class="form-text text-muted">If the remaining tenure <b>between 1
+                                        -12
+                                        month</b>,
+                                    enter
+                                    1, else 0:</small>
+                            </div> -->
+                            <div class="mb-4">
+                                <label for="comment">INTERNET - Online Security</label>
+                                <input class="form-control" rows="2" id="query3" name="query3" rows="2"
+                                    cols="5">{{query3}}</input>
+                                <small id="emailHelp" class="form-text text-muted">If the customer <b>DO NOT use Online
+                                        Security</b>
+                                    services, enter 1, else 0:</small>
+                            </div>
+                            <div class="mb-4">
+                                <label for="comment">INTERNET - Tech Support</label>
+                                <input class="form-control" rows="2" id="query4" name="query4" rows="2"
+                                    cols="5">{{query4}}</input>
+                                <small id="emailHelp" class="form-text text-muted">If the customer <b>DO NOT use Tech
+                                        Support
+                                        services</b>, enter 1, else 0:</small>
+                            </div>
+                            <div class="mb-4">
+                                <label for="comment">INTERNET - Online Backup</label>
+                                <input class="form-control" rows="2" id="query5" name="query5" rows="2"
+                                    cols="5">{{query5}}</input>
+                                <small id="emailHelp" class="form-text text-muted">If the customer <b>DO NOT use Online
+                                        Backup
+                                        services</b>, enter 1, else 0:</small>
+                            </div>
+                            <div class="mb-4">
+                                <label for="comment">INTERNET - Device Protection</label>
+                                <input class="form-control" rows="2" id="query9" name="query9" rows="2"
+                                    cols="5">{{query9}}</input>
+                                <small id="emailHelp" class="form-text text-muted">If the customer <b>DO NOT use Device
+                                        Protection
+                                        services</b>, enter 1, else 0:</small>
+                            </div>
+                            <button type="submit" id="prediction-form" name="submit" class="btn btn-primary"
+                                data-bs-toggle="modal" data-bs-target="#predictionModal">
+                                <span>Submit</span>
+                            </button>
+                        </form>
+                        <!-- End of Form -->
+                        <!-- Modal -->
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="predictionModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Hasil Prediksi</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p id="predictionMessage"></p>
+                                        <p id="predictionProbability"></p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                        <script>
+                            // Function to handle form submission
+                            $('#prediction-form').submit(function (event) {
+                                event.preventDefault(); // Prevent the default form submission
+
+                                // Serialize the form data
+                                var formData = $(this).serialize();
+
+                                // Make an AJAX POST request to the Flask server
+                                $.ajax({
+                                    type: 'POST',
+                                    url: '/predict',
+                                    data: formData,
+                                    success: function (data) {
+                                        // Parse the JSON response from the server
+                                        var predictionMessage = data.output1;
+                                        var predictionProbability = data.output2;
+
+                                        // Update the modal content
+                                        $('#predictionMessage').text(predictionMessage);
+                                        $('#predictionProbability').text("Probability: " + predictionProbability);
+
+                                        // Show the modal
+                                        $('#predictionModal').modal('show');
+                                    },
+                                    error: function (error) {
+                                        console.error('Error:', error);
+                                    }
+                                });
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {% endblock content %}
+
+    <!-- Specific Page JS goes HERE  -->
+    {% block javascripts %}{% endblock javascripts %}
